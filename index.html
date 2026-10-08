@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Elewana Collection — Lake Kivumba Camp Pre-Opening Training Progress</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400&family=DM+Sans:wght@300;400;500;600&display=swap">
+<style>
+/* EC Brand Palette — same as the Specialised Training Dashboard
+   PANTONE 7562C #BD9A5E Gold · PANTONE 877C #8D9090 Grey · PANTONE 7527C #F7F6F3 Cream */
+:root{
+  --gold:#BD9A5E; --gold-light:#D4B580; --gold-dim:rgba(189,154,94,0.10);
+  --grey-banner:#6B6E6E; --silver:#8D9090; --grey-border:#D4D3D2;
+  --cream-bg:#F7F6F3; --cream-dim:rgba(46,43,40,0.05); --white:#FFFFFF;
+  --text-dark:#2E2B28; --text-mid:#6B6E6E; --text-light:#F7F6F3;
+  --line:rgba(141,144,144,0.30); --track:#ECEAE6;
+  --good:#2F6B4F; --low:#B5562B; --radius:8px;
+  --serif:'Cormorant Garamond',Georgia,serif; --sans:'DM Sans','Helvetica Neue',sans-serif;
+}
+*{box-sizing:border-box}
+html{color-scheme:light}
+body{margin:0;font-family:var(--sans);background:var(--cream-bg);color:var(--text-dark);font-size:15px;line-height:1.6;min-height:100vh}
+a{color:var(--gold)} a:hover{color:var(--gold-light)}
+:focus-visible{outline:2px solid var(--gold);outline-offset:2px}
+
+/* ===== TOPBAR (identical to Training Dashboard) ===== */
+.topbar{background:var(--grey-banner);border-bottom:1px solid var(--line);padding:0 28px;display:flex;align-items:center;justify-content:space-between;height:64px;position:sticky;top:0;z-index:100;gap:16px}
+.brand{display:flex;align-items:center;gap:14px;flex-shrink:0;min-width:0}
+.brand-logo{height:38px;width:auto;object-fit:contain}
+.brand-fallback{font-family:var(--serif);font-style:italic;font-size:30px;line-height:1;color:var(--gold);letter-spacing:.01em}
+.brand-text .sub{font-size:10px;letter-spacing:.15em;text-transform:uppercase;color:var(--text-light);opacity:.85;font-weight:600}
+.topbar-actions{display:flex;gap:8px;align-items:center;flex-wrap:wrap;justify-content:flex-end}
+.btn{padding:8px 18px;border-radius:6px;border:none;font-family:var(--sans);font-size:13px;font-weight:600;cursor:pointer;transition:all .2s;letter-spacing:.02em;text-decoration:none;display:inline-block;white-space:nowrap}
+.btn-ghost{background:transparent;color:var(--text-light);opacity:.85;border:1px solid rgba(213,204,187,.35)}
+.btn-ghost:hover{border-color:var(--gold);color:var(--gold);opacity:1}
+.btn-active{background:var(--gold-dim);color:var(--gold);border:1px solid var(--gold)}
+@media (max-width:900px){
+  .topbar{height:auto;padding:12px 16px;flex-wrap:wrap;position:static}
+  .brand-text{display:none}
+  .btn{padding:6px 12px;font-size:12px}
+}
+
+/* ===== HERO ===== */
+.hero{text-align:center;padding:56px 24px 32px;max-width:720px;margin:0 auto}
+.hero h1{font-family:var(--serif);font-size:clamp(28px,5vw,42px);font-weight:700;color:#4a4a4a;line-height:1.2;margin:0 0 12px;text-wrap:balance}
+.hero h1 span{color:var(--gold)}
+.hero p{color:var(--text-mid);font-size:15px;max-width:540px;margin:0 auto 10px}
+.meta{display:flex;flex-wrap:wrap;gap:6px 18px;justify-content:center;font-size:13px;color:var(--text-mid)}
+
+/* ===== CONTENT ===== */
+.wrap{max-width:1100px;margin:0 auto;padding-inline:24px;padding-block:8px 56px;display:grid;gap:36px}
+h2{font-family:var(--serif);font-size:26px;font-weight:600;margin:0;line-height:1.2;color:var(--text-dark)}
+h3{font-family:var(--serif);font-size:20px;font-weight:600;margin:0;line-height:1.2}
+section{display:grid;gap:14px;scroll-margin-top:84px}
+.sechead{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:baseline;gap:8px;border-bottom:1px solid var(--line);padding-bottom:8px}
+.sechead p{margin:0;color:var(--text-mid);font-size:13px}
+
+.kpis{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}
+.kpi{background:var(--white);border:1px solid var(--grey-border);border-radius:var(--radius);padding:18px;display:grid;gap:6px;align-content:start}
+.kpi b{font-family:var(--serif);font-size:38px;font-weight:700;line-height:1;color:var(--gold);font-variant-numeric:tabular-nums}
+.kpi.alert b{color:var(--low)}
+.kpi span{font-size:13px;color:var(--text-mid)}
+@media (max-width:760px){.kpis{grid-template-columns:repeat(2,minmax(0,1fr))}}
+
+.tablewrap{overflow-x:auto;background:var(--white);border:1px solid var(--grey-border);border-radius:var(--radius)}
+table{border-collapse:collapse;width:100%;min-width:780px;font-size:13px;font-variant-numeric:tabular-nums}
+th{text-align:left;padding:10px 12px;font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:#3D3F3F;border-bottom:1px solid var(--line);font-weight:600;white-space:nowrap;background:var(--cream-bg)}
+td{padding:10px 12px;border-bottom:1px solid var(--cream-dim);vertical-align:middle}
+tbody tr:nth-child(even) td{background:var(--cream-dim)}
+tfoot td{font-weight:700;border-top:1px solid var(--gold)}
+td.num,th.num{text-align:right}
+.dept{font-weight:600}
+.bar{display:grid;grid-template-columns:1fr auto;gap:8px;align-items:center;min-width:120px}
+.track{height:8px;background:var(--track);border-radius:4px;overflow:hidden}
+.fill{height:100%;background:var(--gold)}
+.pill{display:inline-block;font-size:11px;font-weight:600;letter-spacing:.04em;padding:3px 10px;border-radius:999px;white-space:nowrap;border:1px solid currentColor}
+.pill.crit{color:var(--low)} .pill.warn{color:var(--gold)} .pill.ok{color:var(--good)}
+.muted{color:var(--text-mid)} tr.pend td{color:var(--text-mid)}
+
+.actions{list-style:none;margin:0;padding:0;display:grid;gap:10px}
+.actions li{background:var(--white);border:1px solid var(--grey-border);border-left:4px solid var(--gold);border-radius:var(--radius);padding:14px 16px;display:grid;gap:4px}
+.actions li.crit{border-left-color:var(--low)}
+.actions li strong{font-family:var(--serif);font-size:19px;font-weight:600}
+.actions li span{color:var(--text-mid);font-size:14px}
+
+.ready{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px}
+.rcard{background:var(--white);border:1px solid var(--grey-border);border-radius:var(--radius);padding:16px;display:grid;gap:10px;align-content:start}
+.rcard.pend{background:transparent;border-style:dashed}
+.rcard dl{margin:0;display:grid;grid-template-columns:1fr auto;gap:6px 12px;font-size:13px}
+.rcard dt{color:var(--text-mid)} .rcard dd{margin:0;text-align:right}
+
+details{background:var(--white);border:1px solid var(--grey-border);border-radius:var(--radius)}
+summary{cursor:pointer;padding:14px 16px;display:flex;justify-content:space-between;gap:12px;font-family:var(--serif);font-size:19px;font-weight:600}
+summary small{font-family:var(--sans);font-size:12px;color:var(--text-mid);white-space:nowrap;align-self:center}
+.sess{list-style:none;margin:0;padding:0 16px 14px;display:grid;gap:8px}
+.sess li{display:grid;grid-template-columns:auto 1fr;gap:10px;align-items:start;font-size:14px;min-width:0}
+.box{width:14px;height:14px;border:1.5px solid var(--silver);border-radius:3px;margin-top:4px}
+.codes{font-size:12px;color:var(--text-mid);display:block}
+.grp{padding:4px 16px 6px;font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--gold);font-weight:600}
+footer{font-size:12px;color:var(--text-mid);border-top:1px solid var(--line);padding-top:16px}
+</style>
+</head>
+<body>
+<div class="topbar">
+  <div class="brand">
+    <img class="brand-logo" id="brandLogo" alt="Elewana Collection" hidden>
+    <span class="brand-fallback" id="brandFallback">elewana</span>
+    <div class="brand-text"><div class="sub">Learning &amp; Development · Lake Kivumba Camp Pre-Opening Training Progress</div></div>
+  </div>
+  <nav class="topbar-actions">
+    <a class="btn btn-active" href="#board-sec">Department Board</a>
+    <a class="btn btn-ghost" href="#actions">Actions</a>
+    <a class="btn btn-ghost" href="#sessions-sec">Sessions</a>
+    <a class="btn btn-ghost" href="https://trainingelewana.github.io/Training-Dashboard-for-Reports/">Training Reports</a>
+  </nav>
+</div>
+
+<header class="hero">
+  <h1>Lake Kivumba Camp <span>Pre&#8209;Opening Training Progress</span></h1>
+  <p>Training sign-off, SOP readiness and planned sessions across all departments for Lake Kivumba Camp, Akagera.</p>
+  <div class="meta">
+    <span>Snapshot: 8 October 2026</span>
+    <span>Live figures: <a href="https://docs.google.com/spreadsheets/d/1-l8I8E9ZucXcQW7pPKiAur-o8hV-agM2JxC3NTphZK8/edit" target="_blank" rel="noopener">Master Dashboard sheet</a></span>
+  </div>
+</header>
+
+<main class="wrap">
+  <div class="kpis" role="list">
+    <div class="kpi alert" role="listitem"><b>0%</b><span>SOP sign-offs complete<br>0 of 757 required across 92 SOPs</span></div>
+    <div class="kpi alert" role="listitem"><b>0 / 41</b><span>team names entered in the Training Matrices (5 departments)</span></div>
+    <div class="kpi" role="listitem"><b>5 / 9</b><span>departments with a training plan and Training Matrix</span></div>
+    <div class="kpi" role="listitem"><b>0 / 53</b><span>planned training sessions marked complete</span></div>
+  </div>
+
+  <section id="board-sec">
+    <div class="sechead"><h2>Department sign-off board</h2><p>Sign-offs required = team size × SOPs</p></div>
+    <div class="tablewrap">
+      <table>
+        <thead><tr><th>Department</th><th class="num">Team</th><th class="num">Names in</th><th class="num">SOPs</th><th class="num">Sign-offs</th><th class="num">Signed</th><th class="num">In prog.</th><th>Progress</th><th class="num">Sessions</th><th>Status</th></tr></thead>
+        <tbody id="board"></tbody>
+        <tfoot><tr><td>All planned departments</td><td class="num">41</td><td class="num">0</td><td class="num">92</td><td class="num">757</td><td class="num">0</td><td class="num">0</td><td><div class="bar"><div class="track"><div class="fill" style="width:0%"></div></div><span>0%</span></div></td><td class="num">0 / 53</td><td><span class="pill crit">Not started</span></td></tr></tfoot>
+      </table>
+    </div>
+  </section>
+
+  <section id="actions">
+    <div class="sechead"><h2>What needs a decision or action</h2><p>Found while reading the five plans</p></div>
+    <ul class="actions">
+      <li class="crit"><strong>No team names entered in any department</strong><span>All 41 positions still read “[Enter name]”. Until department heads enter names, individual competency cannot be tracked and every figure stays at zero.</span></li>
+      <li class="crit"><strong>Guide &amp; Wildlife assessments not yet built</strong><span>All 38 Google Form knowledge assessments are marked “To be created”, and practical field validation is “to be defined from the SOP”. This is the largest block of sign-offs (304 of 757).</span></li>
+      <li><strong>Kitchen Lobster Ink courses still provisional</strong><span>Each kitchen session lists Lobster Ink content as “Suggested – verify exact course titles in Lobster Ink”.</span></li>
+      <li><strong>SOP numbers missing from sign-off matrices</strong><span>KT-001 (Kitchen), FBS-012 and FBS-016 (F&amp;B) and HKP-008 (Housekeeping) do not appear in the sign-off matrices. FBS-012 Clearing Ashtrays has a presentation in the F&amp;B plan but no sign-off line. Confirm whether these are intentionally excluded.</span></li>
+      <li><strong>Four departments still need a plan and Training Matrix</strong><span>Front Office, Security, Retail and Finance are set up on the master dashboard. Each will appear here as soon as its plan is added to the AKG folder and linked in the master sheet.</span></li>
+    </ul>
+  </section>
+
+  <section>
+    <div class="sechead"><h2>SOP readiness by department</h2><p>Training material mapped in each plan</p></div>
+    <div class="ready" id="ready"></div>
+  </section>
+
+  <section id="sessions-sec">
+    <div class="sechead"><h2>Planned training sessions</h2><p>Box ticks when the department marks a session complete</p></div>
+    <div id="sessions" style="display:grid;gap:10px"></div>
+  </section>
+
+  <footer>Source: the five departmental plans currently in Google Drive › AKG - Master Training Files (copy sheet and Word onboarding guide excluded). This page is a snapshot; the Master Dashboard sheet updates live.</footer>
+</main>
+
+<script>
+const D=[
+ {n:"Kitchen",team:10,role:"kitchen team",sops:12,sess:6,pres:12,li:"Suggested, to verify",assess:"Quiz + practical checks",
+  s:[["Food Safety Foundations, Hygiene & Cross-Contamination Control","KT-002, KT-006"],["Receiving, Storage, Temperature Control & Defrosting","KT-003, KT-004, KT-005, KT-007"],["Mise-en-Place, Prep Standards & Gas Equipment Safety","KT-008, KT-013"],["Meal Service Periods, Bush Services, Hot Boxes & Hampers","KT-010, KT-011"],["Greeting & Interacting with Guests","KT-009"],["Staff Canteen Operations","KT-012"]]},
+ {n:"Guide & Wildlife",team:8,role:"guides",sops:38,sess:38,pres:38,li:"Mapped per SOP",assess:"38 forms to be created",
+  groups:[["General Standards","GS-001 to GS-015",["Guide Professional Standards & Conduct","Guide Grooming, Hygiene & Uniform Standards","Guest Communication & Hosting Standards","Guest Meet & Greet Procedures","Guide Preparation & Activity Readiness","Guest Briefing Procedures","Wildlife Viewing & Sighting Management Standards","Bush F&B Service Standards","Radio Communication Standards","Guiding Photographers Standards","Guide Equipment & Documentation Standards","Area Code of Conduct Compliance","Guide Apprenticeship & Trainee Guide Standards","Guide Training, Certification & First Aid Compliance","Guide Daily Briefing & Handover Standards"]],
+   ["Driver Guide Standards","DG-001 to DG-010",["Driver Guide Vehicle Preparation","Safe Driving Standards During Safari Activities","Off-Road Driving Procedures","Night Game Drive Procedures","Guest Safety During Vehicle Activities","Driver Guide Vehicle Allocation Procedures","Driver Guide Daily Vehicle Inspection Procedures","Comfort Stop & Bush Toilet Procedures","Airport & Airstrip Transfer Procedures","Private Vehicle / VIP Vehicle Allocation Standards"]],
+   ["Walking Guide Standards","WG-001 to WG-013",["Walking Safari Preparation Procedures","Walking Safari Guest Safety Briefing","Walking Safari Operational Procedures","Walking Safari Dangerous Game Approach Procedures","Walking Safari Emergency Procedures","Walking Safari Firearm Handling Procedures","Walking Safari Guest Positioning & Formation Procedures","Walking Safari Communication & Hand Signal Procedures","Walking Safari Rest Stop & Bush Coffee Procedures","Walking Safari Post-Activity Procedures","Walking Safari Tracking & Spoor Interpretation Procedures","Walking Safari Guest Comfort & Fitness Monitoring Procedures","Walking Safari Environmental & Conservation Compliance Procedures"]]]},
+ {n:"Food & Beverage",team:8,role:"waiters",sops:16,sess:3,pres:19,li:"Mapped per session",assess:"Checklists + role-play",
+  s:[["F&B Service Foundations & Pre-Service Readiness","FBS-001, FBS-002, FBS-003, FBS-009"],["Menu, Order Taking, Food Service & Guest Engagement","FBS-004, FBS-006, FBS-007"],["Beverage, Bar, Billing, Farewell & Stock Control","FBS-005, FBS-008, FBS-010, FBS-011, FBS-013–015, FBS-017, FBS-018"]]},
+ {n:"Spa & Wellness",team:5,role:"therapists",sops:11,sess:3,pres:11,li:"Mapped per session",assess:"Checklists + observation",
+  s:[["Treatment Room Standards, Daily Opening/Closing, Appointment Booking & Consultation","SW-001, SW-006, SW-007, SW-008"],["Product Hygiene, Sanitation & Cleanliness; Therapist Grooming & Conduct","SW-002, SW-003, SW-004, SW-005"],["Massage Protocol, Welcoming Foot Ritual, Opening & Closing Ritual","SW-009, SW-010, SW-011"]]},
+ {n:"Housekeeping",team:10,role:"attendants",sops:15,sess:3,pres:15,li:"Mapped per session",assess:"Checklists + practical",
+  s:[["Housekeeping Safety, Keys, Equipment & Guest Room Standards","HKP-001 to HKP-004"],["Guest Room Cleaning, Bathroom Cleaning, Linen & Laundry","HKP-005, HKP-006, HKP-009, HKP-014, HKP-015"],["Public Areas, F&B Areas, Minibar, Floor Care & Final Assessment","HKP-007, HKP-010 to HKP-013, HKP-016"]]}
+];
+const P=["Front Office","Security","Retail","Finance"];
+const esc=s=>s.replace(/&/g,"&amp;").replace(/</g,"&lt;");
+document.getElementById("board").innerHTML=D.map(d=>{const req=d.team*d.sops;return `<tr><td class="dept">${esc(d.n)}</td><td class="num">${d.team}</td><td class="num">0</td><td class="num">${d.sops}</td><td class="num">${req}</td><td class="num">0</td><td class="num">0</td><td><div class="bar"><div class="track"><div class="fill" style="width:0%"></div></div><span>0%</span></div></td><td class="num">0 / ${d.sess}</td><td><span class="pill crit">Not started</span></td></tr>`}).join("")+P.map(n=>`<tr class="pend"><td class="dept">${n}</td><td class="num">–</td><td class="num">–</td><td class="num">–</td><td class="num">–</td><td class="num">–</td><td class="num">–</td><td><span class="muted">No plan yet</span></td><td class="num">–</td><td><span class="pill warn">Awaiting plan</span></td></tr>`).join("");
+document.getElementById("ready").innerHTML=D.map(d=>`<div class="rcard"><h3>${esc(d.n)}</h3><dl><dt>Team</dt><dd>${d.team} ${d.role}</dd><dt>SOPs in sign-off matrix</dt><dd>${d.sops}</dd><dt>Training presentations</dt><dd>${d.pres}</dd><dt>Lobster Ink support</dt><dd>${esc(d.li)}</dd><dt>Assessment</dt><dd>${esc(d.assess)}</dd></dl></div>`).join("")+P.map(n=>`<div class="rcard pend"><h3>${n}</h3><p class="muted" style="margin:0">Awaiting training plan and Training Matrix.</p></div>`).join("");
+document.getElementById("sessions").innerHTML=D.map(d=>{
+ let body;
+ if(d.groups){body=d.groups.map(g=>`<div class="grp">${g[0]} · ${g[1]}</div><ul class="sess">${g[2].map(t=>`<li><span class="box" aria-label="not complete"></span><span>${esc(t)}</span></li>`).join("")}</ul>`).join("")}
+ else body=`<ul class="sess">${d.s.map(x=>`<li><span class="box" aria-label="not complete"></span><span>${esc(x[0])}<span class="codes">${esc(x[1])}</span></span></li>`).join("")}</ul>`;
+ return `<details><summary>${esc(d.n)}<small>0 of ${d.sess} complete</small></summary>${body}</details>`}).join("");
+</script>
+
+<script>
+/* Logo: re-uses the Elewana logo already embedded in the Training Dashboard (same GitHub site), so this file stays small.
+   If you prefer, replace this script with your own <img class="brand-logo" src="data:image/png;base64,..."> line. */
+(async()=>{try{
+  const html=await (await fetch('https://trainingelewana.github.io/Training-Dashboard-for-Reports/')).text();
+  const m=html.match(/class="brand-logo"[^>]*src="(data:image\/[^"]+)"/)||html.match(/src="(data:image\/[^"]+)"[^>]*class="brand-logo"/);
+  if(m){const img=document.getElementById('brandLogo');img.src=m[1];img.hidden=false;document.getElementById('brandFallback').hidden=true;}
+}catch(e){}})();
+/* Highlight the nav button for the section in view */
+const navBtns=[...document.querySelectorAll('.topbar-actions a[href^="#"]')];
+navBtns.forEach(b=>b.addEventListener('click',()=>{navBtns.forEach(x=>x.className='btn btn-ghost');b.className='btn btn-active';}));
+</script>
+</body>
+</html>
