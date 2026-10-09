@@ -30,12 +30,14 @@ a{color:var(--gold)} a:hover{color:var(--gold-light)}
 .brand-logo{height:38px;width:auto;object-fit:contain}
 .brand-fallback{font-family:var(--serif);font-style:italic;font-size:30px;line-height:1;color:var(--gold);letter-spacing:.01em}
 .brand-text .sub{font-size:10px;letter-spacing:.15em;text-transform:uppercase;color:var(--text-light);opacity:.85;font-weight:600}
-.topbar-actions{display:flex;gap:8px;align-items:center;flex-wrap:wrap;justify-content:flex-end}
+.topbar-actions{display:flex;gap:8px;align-items:center;flex-wrap:nowrap;justify-content:flex-end}
 .btn{padding:8px 18px;border-radius:6px;border:none;font-family:var(--sans);font-size:13px;font-weight:600;cursor:pointer;transition:all .2s;letter-spacing:.02em;text-decoration:none;display:inline-block;white-space:nowrap}
 .btn-ghost{background:transparent;color:var(--text-light);opacity:.85;border:1px solid rgba(213,204,187,.35)}
 .btn-ghost:hover{border-color:var(--gold);color:var(--gold);opacity:1}
 .btn-active{background:var(--gold-dim);color:var(--gold);border:1px solid var(--gold)}
+@media (max-width:1400px){ .btn{padding:7px 12px;font-size:12px} .brand-text .sub{letter-spacing:.1em} }
 @media (max-width:900px){
+  .topbar-actions{flex-wrap:wrap}
   .topbar{height:auto;padding:12px 16px;flex-wrap:wrap;position:static}
   .brand-text{display:none}
   .btn{padding:6px 12px;font-size:12px}
@@ -56,12 +58,12 @@ section{display:grid;gap:14px;scroll-margin-top:84px}
 .sechead{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:baseline;gap:8px;border-bottom:1px solid var(--line);padding-bottom:8px}
 .sechead p{margin:0;color:var(--text-mid);font-size:13px}
 
-.kpis{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}
+.kpis{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:12px}
 .kpi{background:var(--white);border:1px solid var(--grey-border);border-radius:var(--radius);padding:18px;display:grid;gap:6px;align-content:start}
 .kpi b{font-family:var(--serif);font-size:38px;font-weight:700;line-height:1;color:var(--gold);font-variant-numeric:tabular-nums}
 .kpi.alert b{color:var(--low)}
 .kpi span{font-size:13px;color:var(--text-mid)}
-@media (max-width:760px){.kpis{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:900px){.kpis{grid-template-columns:repeat(2,minmax(0,1fr))} .kpi:last-child{grid-column:1/-1}}
 
 .tablewrap{overflow-x:auto;background:var(--white);border:1px solid var(--grey-border);border-radius:var(--radius)}
 table{border-collapse:collapse;width:100%;min-width:780px;font-size:13px;font-variant-numeric:tabular-nums}
@@ -109,28 +111,30 @@ footer{font-size:12px;color:var(--text-mid);border-top:1px solid var(--line);pad
     <div class="brand-text"><div class="sub">Learning &amp; Development · Lake Kivumba Camp Pre-Opening Training Progress</div></div>
   </div>
   <nav class="topbar-actions">
-    <a class="btn btn-active" href="#board-sec">Department Board</a>
+    <a class="btn btn-active" href="#board-sec">Departments</a>
     <a class="btn btn-ghost" href="#actions">Actions</a>
     <a class="btn btn-ghost" href="#sessions-sec">Sessions</a>
+    <a class="btn btn-ghost" href="#supplier-sec">Suppliers</a>
     <a class="btn btn-ghost" href="https://trainingelewana.github.io/Training-Dashboard-for-Reports/">Training Reports</a>
   </nav>
 </div>
 
 <header class="hero">
   <h1>Lake Kivumba Camp <span>Pre&#8209;Opening Training Progress</span></h1>
-  <p>Training sign-off, SOP readiness and planned sessions across all departments for Lake Kivumba Camp, Akagera.</p>
+  <p>Training sign-off, SOP readiness, planned sessions and supplier installation training across all departments for Lake Kivumba Camp, Akagera.</p>
   <div class="meta">
-    <span>Snapshot: 8 October 2026</span>
+    <span>Snapshot: 9 October 2026, 10:05</span>
     <span>Live figures: <a href="https://docs.google.com/spreadsheets/d/1-l8I8E9ZucXcQW7pPKiAur-o8hV-agM2JxC3NTphZK8/edit" target="_blank" rel="noopener">Master Dashboard sheet</a></span>
   </div>
 </header>
 
 <main class="wrap">
   <div class="kpis" role="list">
-    <div class="kpi alert" role="listitem"><b>0%</b><span>SOP sign-offs complete<br>0 of 757 required across 92 SOPs</span></div>
-    <div class="kpi alert" role="listitem"><b>0 / 41</b><span>team names entered in the Training Matrices (5 departments)</span></div>
-    <div class="kpi" role="listitem"><b>5 / 9</b><span>departments with a training plan and Training Matrix</span></div>
-    <div class="kpi" role="listitem"><b>0 / 53</b><span>planned training sessions marked complete</span></div>
+    <div class="kpi alert" role="listitem"><b>0%</b><span>SOP sign-offs complete<br>0 of 945 required across 139 SOPs and lodge reports</span></div>
+    <div class="kpi alert" role="listitem"><b>0 / 45</b><span>team names entered in the Training Matrices (6 departments)</span></div>
+    <div class="kpi" role="listitem"><b>6 / 9</b><span>departments with a training plan and Training Matrix</span></div>
+    <div class="kpi" role="listitem"><b>0 / 60</b><span>planned training sessions marked complete</span></div>
+    <div class="kpi alert" role="listitem"><b>0 / 46</b><span>supplier installation handovers complete</span></div>
   </div>
 
   <section id="board-sec">
@@ -139,7 +143,7 @@ footer{font-size:12px;color:var(--text-mid);border-top:1px solid var(--line);pad
       <table>
         <thead><tr><th>Department</th><th class="num">Team</th><th class="num">Names in</th><th class="num">SOPs</th><th class="num">Sign-offs</th><th class="num">Signed</th><th class="num">In prog.</th><th>Progress</th><th class="num">Sessions</th><th>Status</th></tr></thead>
         <tbody id="board"></tbody>
-        <tfoot><tr><td>All planned departments</td><td class="num">41</td><td class="num">0</td><td class="num">92</td><td class="num">757</td><td class="num">0</td><td class="num">0</td><td><div class="bar"><div class="track"><div class="fill" style="width:0%"></div></div><span>0%</span></div></td><td class="num">0 / 53</td><td><span class="pill crit">Not started</span></td></tr></tfoot>
+        <tfoot><tr><td>All planned departments</td><td class="num">45</td><td class="num">0</td><td class="num">139</td><td class="num">945</td><td class="num">0</td><td class="num">0</td><td><div class="bar"><div class="track"><div class="fill" style="width:0%"></div></div><span>0%</span></div></td><td class="num">0 / 60</td><td><span class="pill crit">Not started</span></td></tr></tfoot>
       </table>
     </div>
   </section>
@@ -147,17 +151,32 @@ footer{font-size:12px;color:var(--text-mid);border-top:1px solid var(--line);pad
   <section id="actions">
     <div class="sechead"><h2>What needs a decision or action</h2><p>Found while reading the five plans</p></div>
     <ul class="actions">
-      <li class="crit"><strong>No team names entered in any department</strong><span>All 41 positions still read “[Enter name]”. Until department heads enter names, individual competency cannot be tracked and every figure stays at zero.</span></li>
-      <li class="crit"><strong>Guide &amp; Wildlife assessments not yet built</strong><span>All 38 Google Form knowledge assessments are marked “To be created”, and practical field validation is “to be defined from the SOP”. This is the largest block of sign-offs (304 of 757).</span></li>
+      <li class="crit"><strong>No team names entered in any department</strong><span>All 45 positions still read “[Enter name]”. Until department heads enter names, individual competency cannot be tracked and every figure stays at zero.</span></li>
+      <li class="crit"><strong>Guide &amp; Wildlife assessments not yet built</strong><span>All 38 Google Form knowledge assessments are marked “To be created”, and practical field validation is “to be defined from the SOP”. This is the largest block of sign-offs (304 of 945).</span></li>
       <li><strong>Kitchen Lobster Ink courses still provisional</strong><span>Each kitchen session lists Lobster Ink content as “Suggested – verify exact course titles in Lobster Ink”.</span></li>
       <li><strong>SOP numbers missing from sign-off matrices</strong><span>KT-001 (Kitchen), FBS-012 and FBS-016 (F&amp;B) and HKP-008 (Housekeeping) do not appear in the sign-off matrices. FBS-012 Clearing Ashtrays has a presentation in the F&amp;B plan but no sign-off line. Confirm whether these are intentionally excluded.</span></li>
-      <li><strong>Four departments still need a plan and Training Matrix</strong><span>Front Office, Security, Retail and Finance are set up on the master dashboard. Each will appear here as soon as its plan is added to the AKG folder and linked in the master sheet.</span></li>
+      <li><strong>Supplier installation tracker needs its details filled in</strong><span>All 46 supplier handovers are “Not started” and no suppliers, dates or trainers are entered yet. The property name and opening date on the Read Me tab are still blank. Remove items that don’t apply to Lake Kivumba Camp (for example electric fencing or CCTV, if not fitted) so they don’t count against progress.</span></li>
+      <li><strong>Engineering / Maintenance has handovers but no training plan</strong><span>10 of the 46 supplier handovers (solar, generator, borehole, water, wastewater and pool plant) belong to Engineering / Maintenance, which has no SOP training plan or Training Matrix yet.</span></li>
+      <li><strong>Lodge Controllers matrix shows nothing pending</strong><span>Finance now has its Lodge Controllers plan: 4 controllers, 47 lodge reports (LR 100–144) and 7 sessions, so 188 sign-offs. The Training Matrix cells are still blank rather than “Pending”, so its dashboard reports 0 pending instead of 188. Lobster Ink courses are now mapped to every session (for example Taking Stock, Financial Management Foundations, Front Office Accounting Basics); the plan notes there is no dedicated Lobster Ink course for purchasing and receiving or for payroll, leave and fixed assets, so hands-on lodge report sign-off is mandatory for those.</span></li>
+      <li><strong>Three departments still need a plan and Training Matrix</strong><span>Front Office, Security and Retail are set up on the master dashboard. Each will appear here as soon as its plan is added to the AKG folder and linked in the master sheet.</span></li>
     </ul>
   </section>
 
   <section>
     <div class="sechead"><h2>SOP readiness by department</h2><p>Training material mapped in each plan</p></div>
     <div class="ready" id="ready"></div>
+  </section>
+
+    <section id="supplier-sec">
+    <div class="sechead"><h2>Supplier installation training</h2><p>Handover training from suppliers and installers · <a href="https://docs.google.com/spreadsheets/d/1-Gz5QG0ttCR7iIb3FsYhhfsT9oeYhbNpbQtdSzTww48/edit" target="_blank" rel="noopener">open tracker</a></p></div>
+    <div class="tablewrap">
+      <table>
+        <thead><tr><th>Department</th><th class="num">Items</th><th class="num">Completed</th><th class="num">Scheduled</th><th class="num">Not started</th><th>Progress</th><th class="num">Training hrs</th><th class="num">Sign-offs</th></tr></thead>
+        <tbody id="supBoard"></tbody>
+        <tfoot><tr><td>All departments</td><td class="num">46</td><td class="num">0</td><td class="num">0</td><td class="num">46</td><td><div class="bar"><div class="track"><div class="fill" style="width:0%"></div></div><span>0%</span></div></td><td class="num">0.0</td><td class="num">0</td></tr></tfoot>
+      </table>
+    </div>
+    <div id="supItems" style="display:grid;gap:10px"></div>
   </section>
 
   <section id="sessions-sec">
@@ -181,17 +200,23 @@ const D=[
  {n:"Spa & Wellness",team:5,role:"therapists",sops:11,sess:3,pres:11,li:"Mapped per session",assess:"Checklists + observation",
   s:[["Treatment Room Standards, Daily Opening/Closing, Appointment Booking & Consultation","SW-001, SW-006, SW-007, SW-008"],["Product Hygiene, Sanitation & Cleanliness; Therapist Grooming & Conduct","SW-002, SW-003, SW-004, SW-005"],["Massage Protocol, Welcoming Foot Ritual, Opening & Closing Ritual","SW-009, SW-010, SW-011"]]},
  {n:"Housekeeping",team:10,role:"attendants",sops:15,sess:3,pres:15,li:"Mapped per session",assess:"Checklists + practical",
-  s:[["Housekeeping Safety, Keys, Equipment & Guest Room Standards","HKP-001 to HKP-004"],["Guest Room Cleaning, Bathroom Cleaning, Linen & Laundry","HKP-005, HKP-006, HKP-009, HKP-014, HKP-015"],["Public Areas, F&B Areas, Minibar, Floor Care & Final Assessment","HKP-007, HKP-010 to HKP-013, HKP-016"]]}
+  s:[["Housekeeping Safety, Keys, Equipment & Guest Room Standards","HKP-001 to HKP-004"],["Guest Room Cleaning, Bathroom Cleaning, Linen & Laundry","HKP-005, HKP-006, HKP-009, HKP-014, HKP-015"],["Public Areas, F&B Areas, Minibar, Floor Care & Final Assessment","HKP-007, HKP-010 to HKP-013, HKP-016"]]},
+ {n:"Finance · Lodge Controllers",team:4,role:"controllers",sops:47,sess:7,pres:"Facilitator walk-through",li:"Mapped per session",assess:"Completed LR example + observed competency",
+  s:[["Reservations, occupancy & guest revenue","LR 100–102, 104–106, 118, 119, 122"],["Cash handling, payments & safekeeping","LR 103, 107, 140, 141"],["Inventory & departmental stock control","LR 108–117"],["Purchasing, ordering & receiving","LR 127, 128, 132, 133, 133.1, 134"],["Cost analysis & control exceptions","LR 123, 129, 135, 135.1, 136–138"],["Operational reporting & budgets","LR 120, 121, 124–126, 139, 143, 144"],["Payroll, leave & asset accountability","LR 130, 131, 142"]]}
 ];
-const P=["Front Office","Security","Retail","Finance"];
+const P=["Front Office","Security","Retail"];
 const esc=s=>s.replace(/&/g,"&amp;").replace(/</g,"&lt;");
 document.getElementById("board").innerHTML=D.map(d=>{const req=d.team*d.sops;return `<tr><td class="dept">${esc(d.n)}</td><td class="num">${d.team}</td><td class="num">0</td><td class="num">${d.sops}</td><td class="num">${req}</td><td class="num">0</td><td class="num">0</td><td><div class="bar"><div class="track"><div class="fill" style="width:0%"></div></div><span>0%</span></div></td><td class="num">0 / ${d.sess}</td><td><span class="pill crit">Not started</span></td></tr>`}).join("")+P.map(n=>`<tr class="pend"><td class="dept">${n}</td><td class="num">–</td><td class="num">–</td><td class="num">–</td><td class="num">–</td><td class="num">–</td><td class="num">–</td><td><span class="muted">No plan yet</span></td><td class="num">–</td><td><span class="pill warn">Awaiting plan</span></td></tr>`).join("");
-document.getElementById("ready").innerHTML=D.map(d=>`<div class="rcard"><h3>${esc(d.n)}</h3><dl><dt>Team</dt><dd>${d.team} ${d.role}</dd><dt>SOPs in sign-off matrix</dt><dd>${d.sops}</dd><dt>Training presentations</dt><dd>${d.pres}</dd><dt>Lobster Ink support</dt><dd>${esc(d.li)}</dd><dt>Assessment</dt><dd>${esc(d.assess)}</dd></dl></div>`).join("")+P.map(n=>`<div class="rcard pend"><h3>${n}</h3><p class="muted" style="margin:0">Awaiting training plan and Training Matrix.</p></div>`).join("");
+document.getElementById("ready").innerHTML=D.map(d=>`<div class="rcard"><h3>${esc(d.n)}</h3><dl><dt>Team</dt><dd>${d.team} ${d.role}</dd><dt>${d.n.includes("Lodge")?"Lodge reports in sign-off matrix":"SOPs in sign-off matrix"}</dt><dd>${d.sops}</dd><dt>Training presentations</dt><dd>${d.pres}</dd><dt>Lobster Ink support</dt><dd>${esc(d.li)}</dd><dt>Assessment</dt><dd>${esc(d.assess)}</dd></dl></div>`).join("")+P.map(n=>`<div class="rcard pend"><h3>${n}</h3><p class="muted" style="margin:0">Awaiting training plan and Training Matrix.</p></div>`).join("");
 document.getElementById("sessions").innerHTML=D.map(d=>{
  let body;
  if(d.groups){body=d.groups.map(g=>`<div class="grp">${g[0]} · ${g[1]}</div><ul class="sess">${g[2].map(t=>`<li><span class="box" aria-label="not complete"></span><span>${esc(t)}</span></li>`).join("")}</ul>`).join("")}
  else body=`<ul class="sess">${d.s.map(x=>`<li><span class="box" aria-label="not complete"></span><span>${esc(x[0])}<span class="codes">${esc(x[1])}</span></span></li>`).join("")}</ul>`;
  return `<details><summary>${esc(d.n)}<small>0 of ${d.sess} complete</small></summary>${body}</details>`}).join("");
+const SUP=[{"d": "Engineering / Maintenance", "i": [["Solar PV array, inverters & battery bank", "Monitoring app, load management, safe isolation (LOTO)"], ["Backup generator & auto-changeover", "Daily checks, fuel log, service intervals"], ["Borehole pump & water storage tanks", "Pump operation, level monitoring, fault finding"], ["Water treatment (RO / UV / chlorination / filters)", "Backwash, membrane care, water testing & records"], ["Wastewater / sewage treatment plant or bio-digester", "Daily checks, sludge management, effluent testing"], ["Grease traps", "Cleaning schedule & disposal"], ["Hot water geysers (solar / heat pump)", "Operation, element & valve checks"], ["Fuel storage & dispensing", "Safe handling, spill kit use, stock records"], ["Workshop tools & equipment", "Safe use, PPE, maintenance"], ["Pool plant, dosing & water balance (main pool + 10 plunge pools)", "Plant operation, chemical dosing, water balance testing, leak checks"]]}, {"d": "Kitchen", "i": [["Combi oven", "Programs, cleaning cycle, daily care"], ["Gas range, burners & LPG installation", "Gas safety, leak testing, emergency shut-off"], ["Extraction hood & filters", "Cleaning schedule, fire risk"], ["Walk-in cold room & freezers", "Temperature monitoring, alarms, defrost"], ["Dishwasher & chemical dosing", "Operation, dosing, chemical safety (SDS)"], ["Small equipment (blast chiller, vacuum packer, slicer, mixers)", "Safe operation & cleaning"], ["Kitchen fire suppression system", "Activation, manual release, inspection"]]}, {"d": "F&B / Bar", "i": [["Coffee machine & grinder", "Barista basics, cleaning, descaling"], ["Ice machine", "Operation, hygiene cleaning"], ["Bar & wine fridges", "Temperature, stock rotation"], ["POS / EPOS terminals", "Orders, charges to room, end of day"]]}, {"d": "Housekeeping & Laundry", "i": [["Commercial washer & dryer", "Programs, load sizes, lint & filter care"], ["Flatwork ironer / press", "Safe operation, burn prevention"], ["Laundry chemical dosing", "Dosing settings, SDS, stain treatment"], ["Housekeeping chemicals & dilution stations", "Dilution, labelling, SDS"], ["In-tent safes, minibars, fans / AC", "Reset, guest instructions, faults"], ["Tent canvas, zips, mosquito nets & decking", "Manufacturer care & cleaning handover"], ["Chemical handling & safety course (ECOLAB or Rwandan equivalent) — cross-department", "Chemical safety, personal hygiene, first aid for chemicals, product application, test & evaluation"]]}, {"d": "Front Office / IT", "i": [["Property management system (PMS) & channel manager", "Reservations, check-in/out, billing"], ["Satellite internet & Wi-Fi network", "Restart, guest access, fault reporting"], ["Two-way radios / VHF base station", "Radio protocol, charging, call signs"], ["CCTV & access control (if fitted)", "Viewing, retention, privacy"]]}, {"d": "Finance & Stores", "i": [["Accounting & procurement / inventory system", "Requisitions, GRNs, stock counts"], ["Stores scales & cold-chain receiving", "Calibration, receiving checks"]]}, {"d": "Security & Safety", "i": [["Fire detection, extinguishers & fire blankets", "Supplier training plus fire drill"], ["Guest alarm / panic system in tents", "Response procedure, testing"], ["Perimeter / electric fencing (if fitted)", "Checks, isolation, wildlife incidents"], ["First aid kits & AED", "AED use, kit checks"], ["Snake-bite kit & casevac equipment / medevac provider", "Casualty evacuation procedure"]]}, {"d": "Guiding / Activities", "i": [["Game vehicles", "Daily checks, recovery gear, tyre change"], ["Vehicle radios & GPS trackers", "Use, charging, emergency calls"], ["Boats & life jackets (if on water)", "Pre-launch checks, water safety"]]}, {"d": "Spa & Wellness", "i": [["Treatment beds, steamer / sauna (if fitted)", "Operation, hygiene, safety"], ["Product-house training (e.g. Healing Earth)", "Product knowledge & treatments"]]}, {"d": "Retail", "i": [["Retail POS & stock system", "Sales, stock, reconciliation"]]}, {"d": "Pest Control (cross-department)", "i": [["Pest control service & chemicals", "Safe handling, bait stations, records"]]}];
+
+document.getElementById("supBoard").innerHTML=SUP.map(g=>`<tr><td class="dept">${esc(g.d)}</td><td class="num">${g.i.length}</td><td class="num">0</td><td class="num">0</td><td class="num">${g.i.length}</td><td><div class="bar"><div class="track"><div class="fill" style="width:0%"></div></div><span>0%</span></div></td><td class="num">0.0</td><td class="num">0</td></tr>`).join("");
+document.getElementById("supItems").innerHTML=SUP.map(g=>`<details><summary>${esc(g.d)}<small>0 of ${g.i.length} handovers complete</small></summary><ul class="sess">${g.i.map(x=>`<li><span class="box" aria-label="not complete"></span><span>${esc(x[0])}<span class="codes">${esc(x[1])}</span></span></li>`).join("")}</ul></details>`).join("");
 </script>
 
 <script>
